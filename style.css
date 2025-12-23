@@ -289,10 +289,10 @@ body {
 
 /* From Uiverse.io by Galahhad */ 
 .theme-switch {
-  --toggle-size: 30px;
-  /* the size is adjusted using font-size,
-     this is not transform scale,
-     so you can choose any size */
+  --toggle-size: 10px;
+    flex: 0 0 auto;       
+    width: max-content;  
+    margin-left: 12px;
   --container-width: 5.625em;
   --container-height: 2.5em;
   --container-radius: 6.25em;
