@@ -137,13 +137,9 @@
 
 <script>
   const toggle = document.getElementById("themeToggle");
-  const themeLink = document.getElementById("theme-style");
+  const body = document.body;
 
   toggle.addEventListener("change", () => {
-    if (toggle.checked) {
-      themeLink.href = "./dark.css";
-    } else {
-      themeLink.href = "./light.css";
-    }
+    body.classList.toggle("dark", toggle.checked);
   });
 </script>

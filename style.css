@@ -46,24 +46,24 @@ body {
 }
 
 
-/* ================= AUTO LIGHT / DARK ================= */
-@media (prefers-color-scheme: dark) {
-    body {
-        --bg: var(--bg-dark);
-        --text: var(--text-dark);
-        --muted: var(--muted-dark);
-        --card: var(--card-dark);
-    }
+/* ================= THEME VARIABLES ================= */
+
+/* Light mode (default) */
+body {
+    --bg: var(--bg-light);
+    --text: var(--text-light);
+    --muted: var(--muted-light);
+    --card: var(--card-light);
 }
 
-@media (prefers-color-scheme: light) {
-    body {
-        --bg: var(--bg-light);
-        --text: var(--text-light);
-        --muted: var(--muted-light);
-        --card: var(--card-light);
-    }
+/* Dark mode */
+body.dark {
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+    --muted: var(--muted-dark);
+    --card: var(--card-dark);
 }
+
 
 /* ================= BASE ================= */
 body {
