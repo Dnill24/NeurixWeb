@@ -29,8 +29,8 @@
         <!-- Navigation -->
         <nav class="nav">
             <a class="nav-link" href="#home">Home</a>
-            <a class="nav-link" href="#">About</a>
             <a class="nav-link" href="#features">Features</a>
+            <a class="nav-link" href="#about">About</a>
             <a class="nav-link" href="#">Contact</a>
 
             <!-- Action Button -->
@@ -134,6 +134,62 @@
     </div>
 </section>
 
+<section class="about-product" id="about">
+  <div class="about-container">
+
+    <!-- Section header -->
+    <div class="about-header">
+      <h2 class="about-title">About the Product</h2>
+      <p class="about-intro">
+        Neurix is built to redefine how users interact with decentralized systems —
+        combining speed, security, and intelligence into one seamless experience.
+      </p>
+    </div>
+
+    <!-- Content grid -->
+    <div class="about-grid">
+
+      <!-- Left: text blocks -->
+      <div class="about-text">
+        <div class="about-point">
+          <h3>Intelligent Architecture</h3>
+          <p>
+            Our platform leverages adaptive systems to optimize performance
+            while maintaining full decentralization.
+          </p>
+        </div>
+
+        <div class="about-point">
+          <h3>Security First</h3>
+          <p>
+            Built with enterprise-grade encryption and continuous monitoring
+            to protect user assets at every layer.
+          </p>
+        </div>
+
+        <div class="about-point">
+          <h3>Scalable by Design</h3>
+          <p>
+            Designed to grow with demand, Neurix maintains speed and reliability
+            regardless of network load.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: image + button -->
+      <div class="about-media">
+        <img src="./img/about-product.png" alt="Neurix Product Overview">
+
+        <button class="btn about-btn">
+          Learn More
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 </body>
 </html>
 
@@ -164,4 +220,18 @@
   );
 
   observer.observe(hero);
+</script>
+
+<script>
+  const root = document.body;
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const offset = scrollY * 0.02;
+
+    root.style.setProperty(
+      "--scroll-shift",
+      `${offset}%`
+    );
+  });
 </script>
