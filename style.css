@@ -8,26 +8,50 @@
     text-decoration: none;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #ffffff;
-    background: linear-gradient(
-        135deg,
-        #00ff88,
-        #00cc66,
-        #00a65a
-    );
-    min-height: 100vh;
+/* ================= COLOR SYSTEM ================= */
+:root {
+    /* Gradient */
+    --grad-1: #00ff88;
+    --grad-2: #00cc66;
+
+    /* Light mode */
+    --bg-light: #ffffff;
+    --text-light: #0b0f1a;
+    --muted-light: #5a5f7a;
+    --card-light: #f5f7fa;
+
+    /* Dark mode */
+    --bg-dark: #0b0f1a;
+    --text-dark: #ffffff;
+    --muted-dark: #b5b9d6;
+    --card-dark: #12182b;
 }
 
-/* ================= VARIABLES ================= */
-:root {
-    --green-1: #00ff88;
-    --green-2: #00cc66;
-    --green-3: #00a65a;
-    --dark: #08110c;
-    --card-bg: rgba(8, 17, 12, 0.75);
-    --text-muted: #d4ffe8;
+/* ================= AUTO MODE ================= */
+@media (prefers-color-scheme: dark) {
+    body {
+        --bg: var(--bg-dark);
+        --text: var(--text-dark);
+        --muted: var(--muted-dark);
+        --card: var(--card-dark);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        --bg: var(--bg-light);
+        --text: var(--text-light);
+        --muted: var(--muted-light);
+        --card: var(--card-light);
+    }
+}
+
+/* ================= BASE ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
 }
 
 /* ================= HEADER ================= */
@@ -52,10 +76,9 @@ header {
 }
 
 .nav-link a {
-    color: #ffffff;
+    color: var(--text);
     font-weight: 500;
     opacity: 0.9;
-    transition: 0.3s;
 }
 
 .nav-link a:hover {
@@ -71,7 +94,7 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    padding: 60px 0;
+    padding: 70px 0;
 }
 
 .headline {
@@ -80,48 +103,57 @@ header {
 }
 
 .cryptoText {
-    background: linear-gradient(90deg, #ffffff, #ccffe6);
+    background: linear-gradient(90deg, var(--grad-1), var(--grad-2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .sub-headline {
-    color: var(--text-muted);
+    color: var(--muted);
     line-height: 1.7;
     max-width: 500px;
 }
 
+/* ================= BUTTONS (GRADIENT OUTLINE) ================= */
 .btnContainer {
     margin-top: 30px;
     display: flex;
     gap: 20px;
 }
 
+/* Gradient border trick */
 .btn {
-    padding: 14px 32px;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
+    position: relative;
+    padding: 14px 34px;
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--text);
     font-weight: 600;
-    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+    z-index: 0;
 }
 
-.btn1 {
-    background: linear-gradient(135deg, var(--green-1), var(--green-2));
-    color: #08110c;
-}
-
-.btn2 {
-    background: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .btn:hover {
     transform: translateY(-3px);
 }
 
-/* Hero image */
+/* ================= HERO IMAGE ================= */
 .sectionPic img {
     width: 100%;
     max-width: 480px;
@@ -134,7 +166,7 @@ header {
     100% { transform: translateY(0); }
 }
 
-/* ================= CARD GRID ================= */
+/* ================= CARDS ================= */
 .cards-section {
     width: 90%;
     max-width: 1200px;
@@ -149,13 +181,11 @@ header {
 }
 
 .info-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
+    background: var(--card);
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
     transition: all 0.35s ease;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .info-card img {
@@ -169,24 +199,13 @@ header {
 }
 
 .info-card p {
+    color: var(--muted);
     font-size: 15px;
-    color: var(--text-muted);
     line-height: 1.6;
 }
 
-/* Hover effect */
 .info-card:hover {
-    transform: translateY(-12px) scale(1.03);
-    background: linear-gradient(
-        135deg,
-        rgba(0, 255, 136, 0.9),
-        rgba(0, 204, 102, 0.9)
-    );
-    color: #08110c;
-}
-
-.info-card:hover p {
-    color: #08110c;
+    transform: translateY(-10px);
 }
 
 /* ================= RESPONSIVE ================= */
