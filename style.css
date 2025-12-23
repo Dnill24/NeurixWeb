@@ -519,3 +519,21 @@ body {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+/* ================= CARDS SECTION TITLE ================= */
+.cards-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, var(--grad-1), var(--grad-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive scaling */
+@media (max-width: 600px) {
+  .cards-title {
+    font-size: 2.2rem;
+  }
+}
