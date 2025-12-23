@@ -114,6 +114,8 @@ body {
 }
 
 /* ================= NAV ================= */
+
+
 .nav {
     display: flex;
     align-items: center;
@@ -142,6 +144,25 @@ body {
 .nav-link:hover::after {
     width: 100%;
 }
+
+/* ================= AUTO-HIDE NAVBAR ================= */
+.site-header {
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* Hidden state */
+.site-header:not(:hover):not(:focus-within) {
+  transform: translateY(-85%);
+  opacity: 0.1;
+}
+
+/* Visible when hovered */
+.site-header:hover,
+.site-header:focus-within {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 
 /* ================= HERO ================= */
 .hero {
