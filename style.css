@@ -27,7 +27,7 @@
     --card-dark: #12182b;
 }
 
-/* ================= AUTO MODE ================= */
+/* ================= AUTO LIGHT / DARK ================= */
 @media (prefers-color-scheme: dark) {
     body {
         --bg: var(--bg-dark);
@@ -54,35 +54,57 @@ body {
     min-height: 100vh;
 }
 
-/* ================= HEADER ================= */
-header {
+/* ================= STICKY HEADER ================= */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--bg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
     width: 90%;
     max-width: 1200px;
     margin: auto;
-    padding: 2em 0;
+    padding: 1.2em 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 40px;
 }
 
+/* Logo */
 #logo img {
     width: 140px;
 }
 
+/* ================= NAV ================= */
 .nav {
-    list-style: none;
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 26px;
 }
 
-.nav-link a {
+.nav-link {
     color: var(--text);
     font-weight: 500;
-    opacity: 0.9;
+    position: relative;
 }
 
-.nav-link a:hover {
-    opacity: 1;
+/* Underline hover */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--grad-1), var(--grad-2));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 /* ================= HERO ================= */
@@ -114,14 +136,14 @@ header {
     max-width: 500px;
 }
 
-/* ================= BUTTONS (GRADIENT OUTLINE) ================= */
+/* ================= BUTTONS ================= */
 .btnContainer {
     margin-top: 30px;
     display: flex;
     gap: 20px;
 }
 
-/* Gradient border trick */
+/* Gradient outline button */
 .btn {
     position: relative;
     padding: 14px 34px;
@@ -132,8 +154,10 @@ header {
     cursor: pointer;
     border: none;
     z-index: 0;
+    transition: transform 0.3s ease;
 }
 
+/* Gradient border */
 .btn::before {
     content: "";
     position: absolute;
@@ -153,6 +177,14 @@ header {
     transform: translateY(-3px);
 }
 
+/* Bigger header action button */
+.action-btn {
+    padding: 16px 42px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
 /* ================= HERO IMAGE ================= */
 .sectionPic img {
     width: 100%;
@@ -166,7 +198,7 @@ header {
     100% { transform: translateY(0); }
 }
 
-/* ================= CARDS ================= */
+/* ================= CARD GRID ================= */
 .cards-section {
     width: 90%;
     max-width: 1200px;
@@ -185,7 +217,7 @@ header {
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
-    transition: all 0.35s ease;
+    transition: transform 0.35s ease;
 }
 
 .info-card img {
