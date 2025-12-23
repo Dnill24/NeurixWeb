@@ -233,23 +233,48 @@ body {
     gap: 30px;
 }
 
+/* ================= GRADIENT OUTLINE CARDS ================= */
 .info-card {
-    background: var(--card);
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
-    transition: transform 0.35s ease;
+  position: relative;
+  background: transparent;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform 0.35s ease;
 }
+
+/* Gradient outline */
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
 
 .info-card img {
-    width: 60px;
-    margin-bottom: 20px;
+  width: 60px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 136, 0.35));
 }
 
+
 .info-card h3 {
-    font-size: 22px;
-    margin-bottom: 12px;
+  font-size: 22px;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, var(--grad-1), var(--grad-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 
 .info-card p {
     color: var(--muted);
