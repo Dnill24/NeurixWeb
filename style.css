@@ -244,7 +244,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 400px;
+  min-height: 800px;
   height: 100%; /* key */
   transition: transform 0.35s ease;
 }
