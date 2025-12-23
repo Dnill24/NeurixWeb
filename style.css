@@ -38,6 +38,7 @@
 /* Firefox */
 html {
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 /* Ensure scrolling still works */
@@ -151,14 +152,21 @@ body {
 }
 
 /* Hidden state */
-.site-header:not(:hover):not(:focus-within) {
+.site-header.nav-hidden:not(:hover):not(:focus-within) {
   transform: translateY(-85%);
   opacity: 0.1;
 }
 
+
 /* Visible when hovered */
 .site-header:hover,
 .site-header:focus-within {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.site-header.nav-hidden:hover,
+.site-header.nav-hidden:focus-within {
   transform: translateY(0);
   opacity: 1;
 }

@@ -13,6 +13,7 @@
     <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="home"></div>
 
 <!-- ================= HEADER ================= -->
 <header class="site-header">
@@ -27,9 +28,9 @@
 
         <!-- Navigation -->
         <nav class="nav">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#home">Home</a>
             <a class="nav-link" href="#">About</a>
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#features">Features</a>
             <a class="nav-link" href="#">Contact</a>
 
             <!-- Action Button -->
@@ -66,7 +67,7 @@
 
 
 <!-- ================= HERO ================= -->
-<section class="hero gridSection">
+<section class="hero gridSection" id="hero">
     <div class="sectionDesc">
         <h1 class="headline">
             Most popular way to trade <span class="cryptoText">CRYPTO</span>.
@@ -91,7 +92,7 @@
 
 <!-- ================= CARD GRID ================= -->
 <section class="cards-section">
-     <h2 class="cards-title">Why Neurix</h2>
+    <h2 class="cards-title" id="features">Why Neurix</h2>
     <div class="cards-grid">
 
         <div class="info-card">
@@ -143,4 +144,24 @@
   toggle.addEventListener("change", () => {
     body.classList.toggle("dark", toggle.checked);
   });
+</script>
+
+<script>
+  const header = document.querySelector("header");
+  const hero = document.getElementById("hero");
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) {
+        header.classList.add("nav-hidden");
+      } else {
+        header.classList.remove("nav-hidden");
+      }
+    },
+    {
+      threshold: 0.1
+    }
+  );
+
+  observer.observe(hero);
 </script>
