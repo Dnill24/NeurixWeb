@@ -27,6 +27,12 @@
             </a>
         </div>
 
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <!-- Navigation -->
         <nav class="nav">
             <a class="nav-link" href="#home">Home</a>
@@ -95,8 +101,8 @@
 </section>
 
 <!-- ================= CARD GRID ================= -->
-<section class="cards-section">
-    <h2 class="cards-title" id="features">Why Neurix</h2>
+<section class="cards-section"id="features">
+    <h2 class="cards-title">Why Neurix</h2>
     <div class="cards-grid">
 
         <div class="info-card">
@@ -205,7 +211,6 @@
  <button class="cta-btn rainbow-btn">
   <span>Get Started Today</span>
 </button>
-
 
     <!-- Closing statement -->
     <p class="cta-subtext">
@@ -422,5 +427,13 @@ function animate() {
 animate();
 </script>
 
+<script>
+  const togglenav = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+
+  togglenav.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+</script>
 
 
