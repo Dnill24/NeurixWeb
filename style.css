@@ -22,6 +22,7 @@
   --text-dark: #ffffff;
   --muted-dark: #b5b9d6;
   --card-dark: #12182b;
+  --card-text: #0b0f1a;
 }
 
 /* ================= SCROLLBAR ================= */
@@ -101,6 +102,7 @@ body.dark {
   --muted: var(--muted-dark);
   --card: var(--card-dark);
   --wave-hue: 155;
+  --card-text: #ffffff;
 }
 
 /* ================= BACKGROUND OVERLAY ================= */
@@ -441,7 +443,15 @@ body.dark .btn.about-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: idlePop 9s ease-in-out infinite;
+  animation: floatRotate 8s ease-in-out infinite;
+  color: var(--card-text);
+}
+
+.info-card h3,
+.info-card p {
+  color: var(--card-text);       /* enforce text color */
+  z-index: 1;                    /* make sure text is above ::before */
+  position: relative;
 }
 
 body.dark .info-card {
@@ -474,16 +484,6 @@ body.dark .info-card {
 
 .cta-solid:hover {
   transform: translateY(-2px);
-}
-
-/* ================= ANIMATIONS ================= */
-@keyframes idlePop {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-8px) scale(1.03);
-  }
 }
 
 
@@ -875,6 +875,7 @@ body.dark .info-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: var(--card-text);
 }
 
 body.dark .cta-card {
@@ -1000,6 +1001,17 @@ body.dark .rainbow-btn span {
   to   { background-position: 200% 50%; }
 }
 
+@keyframes floatRotate {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-6px) rotate(1deg); }
+  50% { transform: translateY(-12px) rotate(-1deg); }
+  75% { transform: translateY(-6px) rotate(1deg); }
+}
+
+@keyframes borderShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
 
 
 /* ================= RESPONSIVE ================= */
@@ -1081,3 +1093,20 @@ body.dark .rainbow-btn span {
   }
 }
 
+@media (max-width: 600px) {
+  .info-card,
+  .cta-card {
+    padding: 20px 16px; /* reduce padding */
+    min-height: 180px;   /* reduce height */
+  }
+
+  .info-card h3,
+  .cta-card h3 {
+    font-size: 1.05rem;  /* smaller headings */
+  }
+
+  .info-card p,
+  .cta-card p {
+    font-size: 0.9rem;   /* smaller text */
+  }
+}
