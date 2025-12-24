@@ -35,6 +35,48 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ================= SCROLL REVEAL ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variations */
+.reveal.fade {
+  transform: none;
+}
+
+.reveal.left {
+  transform: translateX(-40px);
+}
+
+.reveal.right {
+  transform: translateX(40px);
+}
+
+.reveal.scale {
+  transform: scale(0.92);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
 /* ================= BODY & THEME ================= */
 body {
   font-family: 'Poppins', sans-serif;
@@ -299,6 +341,77 @@ body.dark .site-header {
   }
 }
 
+/* ================= ABOUT BUTTON ================= */
+.btn.about-btn {
+  padding: 14px 42px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  background: linear-gradient(
+    135deg,
+    var(--grad-1),
+    var(--grad-2)
+  );
+
+  color: #0b0f1a;
+  box-shadow:
+    0 8px 22px rgba(0, 255, 136, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* hover / focus */
+.btn.about-btn:hover,
+.btn.about-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 30px rgba(0, 255, 136, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* ================= DARK MODE ================= */
+body.dark .btn.about-btn {
+  background: linear-gradient(
+    135deg,
+    #00ff99,
+    #00cc66
+  );
+
+  color: #0b0f1a;
+  box-shadow:
+    0 8px 26px rgba(0, 255, 136, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* subtle active press */
+.btn.about-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 5px 14px rgba(0, 255, 136, 0.3);
+}
+
+@media (hover: hover) {
+  .btn.about-btn:hover {
+    filter: drop-shadow(0 0 14px rgba(0, 255, 136, 0.6));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn.about-btn {
+    transition: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn.about-btn {
+    padding: 12px 34px;
+    font-size: 0.9rem;
+  }
+}
 
 /* ================= CARDS ================= */
 .cards-section {
