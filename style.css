@@ -943,6 +943,7 @@ body.dark .cta-card {
 
 /* hover motion change */
 .rainbow-btn:hover::before {
+
   filter: saturate(1.2);
   box-shadow: 0 0 14px rgba(0, 255, 160, 0.25);
 }
