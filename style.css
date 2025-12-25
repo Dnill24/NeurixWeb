@@ -379,10 +379,10 @@ body.dark .site-header {
 }
 
 .box1 {
-  width: 70%;
-  height: 70%;
-  bottom: -70%;
-  left: -70%;
+  width: 90%;
+  height: 90%;
+  bottom: -90%;
+  left: -90%;
 }
 
 .box1::before {
@@ -398,10 +398,10 @@ body.dark .site-header {
 }
 
 .box2 {
-  width: 50%;
-  height: 50%;
-  bottom: -50%;
-  left: -50%;
+  width: 70%;
+  height: 70%;
+  bottom: -70%;
+  left: -70%;
   transition-delay: 0.2s;
 }
 
@@ -418,15 +418,15 @@ body.dark .site-header {
 }
 
 .box3 {
-  width: 30%;
-  height: 30%;
-  bottom: -30%;
-  left: -30%;
+  width: 50%;
+  height: 50%;
+  bottom: -50%;
+  left: -50%;
   transition-delay: 0.4s;
 }
 
 .box3::before {
-  background: radial-gradient(circle at 30% 107%, #969fff 0%, #b349ff 90%);
+  background: radial-gradient(circle at 30% 107%, #969fff 0%, #4d588bff 90%);
 }
 
 .box3:hover::before {
@@ -438,6 +438,27 @@ body.dark .site-header {
 }
 
 .box4 {
+  width: 30%;
+  height: 30%;
+  bottom: -30%;
+  left: -30%;
+  transition-delay: 0.6s;
+}
+
+.box4::before {
+  background: radial-gradient(circle at 30% 107%, #0da849ff 0%, #1af113ff 90%);
+}
+
+.box4:hover::before {
+  opacity: 1;
+}
+
+.box4:hover .icon .svg {
+  filter: drop-shadow(0 0 5px white);
+}
+
+
+.box5 {
   width: 10%;
   height: 10%;
   bottom: -10%;
@@ -457,7 +478,85 @@ body.dark .site-header {
 .card:hover .logo {
   transform: translate(70px, -52px);
   letter-spacing: 0px;
+  opacity: 0;
 }
+
+.socials-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text); /* adapts to light/dark mode */
+  text-align: center;
+}
+
+/* Hide mobile buttons by default */
+.social-buttons-mobile {
+  display: none;
+  flex-direction: column; /* vertical layout */
+  align-items: center;    /* center horizontally */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Base style for all buttons */
+.social-btn {
+  display: inline-block;
+  width: 200px;           /* consistent width */
+  padding: 12px 0;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+/* Brand-specific colors */
+.social-btn.telegram {
+  background-color: #0088cc; /* Telegram blue */
+}
+
+.social-btn.whatsapp {
+  background-color: #25d366; /* WhatsApp green */
+}
+
+.social-btn.discord {
+  background-color: #7289da; /* Discord blurple */
+}
+
+.social-btn.instagram {
+  background-color: #e1306c; /* Instagram pink */
+}
+
+/* Hover effect: slightly darker shade */
+.social-btn.telegram:hover {
+  background-color: #007ab8;
+}
+
+.social-btn.whatsapp:hover {
+  background-color: #1ebc5a;
+}
+
+.social-btn.discord:hover {
+  background-color: #5b6eae;
+}
+
+.social-btn.instagram:hover {
+  background-color: #c1275b;
+}
+
+/* Show only on mobile */
+@media (max-width: 900px) {
+  .card {
+    display: none; /* hide desktop card */
+  }
+
+  .social-buttons-mobile {
+    display: flex; /* show vertical social buttons */
+  }
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
