@@ -1,0 +1,25 @@
+/* ================= FEATURES TITLE ================= */
+/* Cards section title base color follows theme */
+.cards-title {
+  color: var(--text); /* black in light, white in dark */
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  background: none; /* remove gradient */
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  text-align: center;
+}
+
+/* Highlight part stays green gradient */
+.cards-title .highlight {
+  background: linear-gradient(90deg, var(--grad-1), var(--grad-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .cards-title {
+    font-size: 2.2rem;
+  }
+}

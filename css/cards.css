@@ -1,0 +1,149 @@
+/* ================= CARDS ================= */
+
+.cards-section {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  padding: 80px 0;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+}
+
+
+/* ================= INFO CARD ================= */
+
+.info-card {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  border-radius: 20px;
+  padding: 26px 22px 28px;
+  min-height: 150px;
+  min-width: 350px;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+
+  color: var(--text);
+
+  animation: floatRotate 9s ease-in-out infinite;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Dark mode deepens glass */
+body.dark .info-card {
+  background: rgba(0, 0, 0, 0.28);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Hover lift */
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* ================= GRADIENT BORDER ================= */
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    135deg,
+    var(--brand-1),
+    var(--brand-2)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* ================= CARD CONTENT ================= */
+
+.info-card img {
+  width: 34px;
+  height: 34px;
+
+  margin-bottom: 14px;
+
+  padding: 6px;
+  border-radius: 8px;
+
+  background: rgba(0, 174, 169, 0.15);
+
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+}
+
+.info-card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+
+  background: linear-gradient(
+    90deg,
+    var(--brand-1),
+    var(--brand-2)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.info-card p {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+/* ================= ACCESSIBILITY ================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .info-card {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .info-card::before {
+    display: none;
+  }
+
+  .info-card {
+    backdrop-filter: none;
+    animation: none;
+
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  body.dark .info-card {
+    background: rgba(0, 0, 0, 0.35);
+  }
+}

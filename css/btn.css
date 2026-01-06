@@ -1,0 +1,66 @@
+/* ================= BUTTONS ================= */
+.btn {
+  position: relative;
+  padding: 14px 34px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .headline {
+    font-size: 2.2rem;
+  }
+
+  .sub-headline {
+    margin: 0 auto;
+  }
+}
+
+/* Teal CTA button */
+.btn.cta-solid {
+  background-color: #00D1CC;
+  color: #053247ff;            /* white text for contrast */
+  border: none;              /* remove any default border */
+  padding: 0.65em 1.8em;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;     /* remove underlines */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.btn.cta-solid:hover {
+  background-color: #009c98; /* slightly darker teal on hover */
+  transform: translateY(-2px); /* subtle lift */
+}
+

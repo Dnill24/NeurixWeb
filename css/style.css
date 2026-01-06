@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Myriad';
+  src: url('./fonts/MYRIADPRO-REGULAR.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+:root {
+  /* Brand colors */
+  --brand-1: #00D1CC;
+  --brand-2: #053c52ff;
+  --brand-3: #032A46;
+
+  /* UI colors */
+  --bg-light: #ffffff;
+  --text-light: #0e1b24;
+  --muted-light: #5f6f7a;
+  --card-light: #ffffff;
+
+  --bg-dark: #08151c;
+  --text-dark: #eef4f7;
+  --muted-dark: #9fb3bf;
+  --card-dark: #0f2430;
+}
+
+/* ================= BODY & THEME ================= */
+body {
+  font-family: "Myriad Pro", "Myriad", sans-serif;
+
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  transition: background-color 0.4s ease, color 0.4s ease;
+
+  /* LIGHT MODE */
+  background-color: #ffffff;
+  color: var(--text-light);
+
+  --canvas-bg: transparent;
+  --orb-opacity: 0.35;
+}
+
+body.dark {
+  background-color: #021827;
+  color: var(--text-dark);
+
+  --canvas-bg: #021827;
+  --orb-opacity: 0.5;
+}
+
+/* ================= CANVAS ================= */
+#wave-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+/* Push all page content above canvas */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= TRANSPARENT SECTIONS ================= */
+section,
+.hero,
+.cards-section,
+.about-product,
+.cta-section {
+  background: transparent !important;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}

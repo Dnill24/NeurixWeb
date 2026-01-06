@@ -1,0 +1,52 @@
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+/* ================= SCROLL REVEAL ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variations */
+.reveal.fade {
+  transform: none;
+}
+
+.reveal.left {
+  transform: translateX(-40px);
+}
+
+.reveal.right {
+  transform: translateX(40px);
+}
+
+.reveal.scale {
+  transform: scale(0.92);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
