@@ -34,7 +34,6 @@ body.dark .site-header {
   pointer-events: none;
 }
 
-/* Show nav when mouse is near top */
 .site-header.nav-visible {
   transform: translateY(0);
   opacity: 1;
@@ -124,6 +123,13 @@ body.dark .nav-link:hover {
   padding-right: 2vw;
 }
 
+/* Only one set of CTA + Theme Switch */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* ================= NAV TOGGLE (MOBILE) ================= */
 .nav-toggle {
   display: none;
@@ -155,9 +161,8 @@ body.dark .nav-toggle span {
 
 /* ================= MOBILE NAV ================= */
 @media (max-width: 900px) {
-  /* Header fixed */
   .site-header {
-    position: fixed; /* always fixed on mobile */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -165,23 +170,19 @@ body.dark .nav-toggle span {
     backdrop-filter: blur(14px) saturate(1.2);
   }
 
-  /* Push hero below header */
   .hero {
     padding-top: 95px;
   }
 
-  /* Inner header layout */
   .header-inner {
     justify-content: space-between;
   }
 
-  /* Center nav static */
   .header-center {
     position: static;
     transform: none;
   }
 
-  /* Toggle button always visible */
   .nav-toggle {
     display: flex;
     position: fixed;
@@ -189,10 +190,10 @@ body.dark .nav-toggle span {
     right: 2vw;
   }
 
-  /* ================= MOBILE NAV PANEL ================= */
+  /* Mobile nav panel */
   .nav {
     position: fixed;
-    top: 95px; /* below header */
+    top: 95px;
     left: 0;
     width: 100%;
     height: calc(60vh - 95px);
@@ -220,7 +221,7 @@ body.dark .nav-toggle span {
     pointer-events: auto;
   }
 
-  /* ================= MOBILE NAV LINKS ================= */
+  /* Mobile nav links */
   .nav > .nav-link {
     font-size: 1rem;
     padding: 0.25rem 0;
@@ -236,26 +237,18 @@ body.dark .nav-toggle span {
     margin-top: 0.5rem;
   }
 
-  /* Hide hover underline in mobile */
   .nav-link::after {
     display: none;
   }
 
-  /* ================= MOBILE CTA & THEME SWITCH ================= */
-  .nav-bottom {
-    margin-top: 1rem;
-    display: flex;
+  /* Move CTA + theme switch into nav */
+  .header-actions {
     flex-direction: column;
-    gap: 12px;
+    margin-top: 1rem;
     width: 100%;
   }
 
-  .nav-cta,
-  .theme-switch {
-    display: inline-block;
-  }
-
-  .nav .btn.cta-solid {
+  .header-actions .btn.cta-solid {
     width: 100%;
   }
 
@@ -266,7 +259,7 @@ body.dark .nav-toggle span {
     pointer-events: auto;
   }
 
-  /* Show/hide desktop/mobile visibility */
+  /* Hide duplicate desktop/mobile classes */
   .desktop-only { display: none; }
   .mobile-only { display: flex; }
 }

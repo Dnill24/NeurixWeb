@@ -28,79 +28,51 @@
 <header class="site-header">
   <div class="header-inner">
 
-    <!-- Left: Logo -->
+    <!-- LEFT: Logo -->
     <div class="header-left">
       <a href="#home" id="logo">
-        <img src="./img/mainlogo.png" alt="Logo">
+        <img src="./img/mainlogo.png" alt="Bullstar Capital Logo">
       </a>
     </div>
 
-    <!-- Center: Navigation links -->
-    <div class="header-center">
-      <nav class="nav">
-        <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#features">Services</a>
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#about">Technology</a>
-        <a class="nav-link" href="#about">Contact</a>
+    <!-- CENTER: Nav Links -->
+    <nav class="header-center nav" role="navigation" aria-label="Main Navigation">
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#features">Services</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#technology">Technology</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
 
-        <!-- Mobile only: CTA + Theme Switch at bottom -->
-        <div class="nav-bottom mobile-only">
-          <a href="#cta" class="btn action-btn cta-solid nav-cta">Get Started</a>
+    <!-- RIGHT: CTA + Theme Switch + Mobile Toggle -->
+    <div class="header-right">
+      <!-- Single CTA + Theme Switch -->
+      <div class="header-actions">
+        <a href="#cta" class="btn action-btn cta-solid">Get Started</a>
 
-          <label class="theme-switch">
-            <input type="checkbox" class="theme-switch__checkbox" id="themeToggle">
-            <div class="theme-switch__container">
-              <div class="theme-switch__clouds"></div>
-              <div class="theme-switch__stars-container">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M135.831 3.00688C135.055 3.85027 134.111 4.29946 133 4.35447C134.111 4.40947 135.055 4.85867 135.831 5.71123C136.607 6.55462 136.996 7.56303 136.996 8.72727C136.996 7.95722 137.172 7.25134 137.525 6.59129C137.886 5.93124 138.372 5.39954 138.98 5.00535C139.598 4.60199 140.268 4.39114 141 4.35447C139.88 4.2903 138.936 3.85027 138.16 3.00688C137.384 2.16348 136.996 1.16425 136.996 0C136.996 1.16425 136.607 2.16348 135.831 3.00688Z"
-                    fill="currentColor" />
-                </svg>
-              </div>
-              <div class="theme-switch__circle-container">
-                <div class="theme-switch__sun-moon-container">
-                  <div class="theme-switch__moon">
-                    <div class="theme-switch__spot"></div>
-                    <div class="theme-switch__spot"></div>
-                    <div class="theme-switch__spot"></div>
-                  </div>
+        <label class="theme-switch">
+          <input type="checkbox" class="theme-switch__checkbox" id="themeToggle">
+          <div class="theme-switch__container">
+            <div class="theme-switch__clouds"></div>
+            <div class="theme-switch__stars-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M135.831 3.00688C135.055 3.85027 134.111 4.29946 133 4.35447C134.111 4.40947 135.055 4.85867 135.831 5.71123C136.607 6.55462 136.996 7.56303 136.996 8.72727C136.996 7.95722 137.172 7.25134 137.525 6.59129C137.886 5.93124 138.372 5.39954 138.98 5.00535C139.598 4.60199 140.268 4.39114 141 4.35447C139.88 4.2903 138.936 3.85027 138.16 3.00688C137.384 2.16348 136.996 1.16425 136.996 0C136.996 1.16425 136.607 2.16348 135.831 3.00688Z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <div class="theme-switch__circle-container">
+              <div class="theme-switch__sun-moon-container">
+                <div class="theme-switch__moon">
+                  <div class="theme-switch__spot"></div>
+                  <div class="theme-switch__spot"></div>
+                  <div class="theme-switch__spot"></div>
                 </div>
               </div>
             </div>
-          </label>
-        </div>
-      </nav>
-    </div>
-
-    <!-- Right: Desktop CTA + Theme Switch, Mobile Toggle -->
-    <div class="header-right">
-      <!-- Desktop CTA + switch (desktop only) -->
-      <a href="#cta" class="btn action-btn cta-solid desktop-only">Get Started</a>
-
-      <label class="theme-switch desktop-only">
-        <input type="checkbox" class="theme-switch__checkbox" id="themeToggleDesktop">
-        <div class="theme-switch__container">
-          <div class="theme-switch__clouds"></div>
-          <div class="theme-switch__stars-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M135.831 3.00688C135.055 3.85027 134.111 4.29946 133 4.35447C134.111 4.40947 135.055 4.85867 135.831 5.71123C136.607 6.55462 136.996 7.56303 136.996 8.72727C136.996 7.95722 137.172 7.25134 137.525 6.59129C137.886 5.93124 138.372 5.39954 138.98 5.00535C139.598 4.60199 140.268 4.39114 141 4.35447C139.88 4.2903 138.936 3.85027 138.16 3.00688C137.384 2.16348 136.996 1.16425 136.996 0C136.996 1.16425 136.607 2.16348 135.831 3.00688Z"
-                fill="currentColor" />
-            </svg>
           </div>
-          <div class="theme-switch__circle-container">
-            <div class="theme-switch__sun-moon-container">
-              <div class="theme-switch__moon">
-                <div class="theme-switch__spot"></div>
-                <div class="theme-switch__spot"></div>
-                <div class="theme-switch__spot"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </label>
+        </label>
+      </div>
 
       <!-- Mobile nav toggle -->
       <button class="nav-toggle" aria-label="Toggle navigation">
@@ -112,7 +84,6 @@
 
   </div>
 </header>
-
 
 <section class="hero reveal" id="hero">
   <div class="hero-inner">
