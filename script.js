@@ -6,18 +6,37 @@ window.addEventListener("load", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // ================= THEME TOGGLE =================
-  // Sync desktop and mobile theme switches
-  const themeToggles = document.querySelectorAll(".theme-switch__checkbox");
-  themeToggles.forEach(toggle => {
-    toggle.addEventListener("change", () => {
-      document.body.classList.toggle("dark", toggle.checked);
-      // Sync all other theme toggles
-      themeToggles.forEach(other => {
-        if (other !== toggle) other.checked = toggle.checked;
-      });
+// ================= THEME TOGGLE =================
+// Sync desktop and mobile theme switches
+const themeToggles = document.querySelectorAll(".theme-switch__checkbox");
+const logoImg = document.getElementById("logo-img"); // Make sure this exists in your HTML
+
+function updateLogo() {
+  if (!logoImg) return; // Safety check
+  if (document.body.classList.contains("dark")) {
+    logoImg.src = "./img/mainlogo-dark.png"; // Dark mode logo
+  } else {
+    logoImg.src = "./img/mainlogo-light.png"; // Light mode logo
+  }
+}
+
+// Apply the logo update whenever the theme changes
+themeToggles.forEach(toggle => {
+  toggle.addEventListener("change", () => {
+    document.body.classList.toggle("dark", toggle.checked);
+
+    // Sync all other toggles
+    themeToggles.forEach(other => {
+      if (other !== toggle) other.checked = toggle.checked;
     });
+
+    // Update the logo
+    updateLogo();
   });
+});
+
+// Update logo on page load in case dark mode is pre-set
+updateLogo();
 
   // ================= MOBILE NAV TOGGLE =================
   const navToggle = document.querySelector(".nav-toggle");
