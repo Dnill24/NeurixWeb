@@ -124,6 +124,11 @@ body.dark .footer-bottom {
     align-items: flex-start;
   }
 
+.footer-container {
+  margin: 0;
+  padding:
+}
+
   .footer-col {
     width: 100%;
     margin-bottom: 24px;
