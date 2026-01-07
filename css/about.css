@@ -163,6 +163,7 @@ body.dark .about-card-large p {
   grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
   gap: 18px; /* smaller gap */
   margin-top: 50px;
+  justify-items: center;
 }
 
 .about-card-small {

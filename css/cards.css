@@ -5,6 +5,9 @@
   max-width: 1120px; /* 1400px → 20% smaller */
   margin: auto;
   padding: 30px 0;   /* 60px → 20% smaller */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cards-grid {
@@ -12,6 +15,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 19px;          /* 24px → 20% smaller */
   justify-content: center;
+  width: 100%;
+  align-items: start;
 }
 
 /* ================= INFO CARD ================= */
@@ -25,7 +30,7 @@
   border-radius: 12.8px;  /* 16px → 20% smaller */
   padding: 17.6px 16px 19.2px; /* 22/20/24px → 20% smaller */
   height: 220px;           /* 240px → 20% smaller */
-  width: 90%;              /* fill grid column */
+  width: 85%;              /* fill grid column */
 
   display: flex;
   flex-direction: column;
@@ -160,14 +165,30 @@ body.dark .info-card p {
     background: rgba(255, 255, 255, 0.12);
     height: auto;
     width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   body.dark .info-card {
     background: rgba(0, 0, 0, 0.35);
   }
 
+  .cards-section {
+    width: 92%;
+    max-width: 92%;
+    padding: 20px 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
   .cards-grid {
-    grid-template-columns: repeat(auto-fit, minmax(176px, 1fr)); /* 220px → 176px */
-    gap: 12.8px; /* 16px → 20% smaller */
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
   }
 }

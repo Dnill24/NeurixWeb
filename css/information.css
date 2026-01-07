@@ -23,6 +23,7 @@
 .information-right {
   flex: 0 1 42%;       /* allow shrinking if needed */
   display: flex;
+  padding-top: 90px;  
   justify-content: center;
   align-items: center;
 }
@@ -43,6 +44,7 @@ body.dark .information-title {
   line-height: 1.45;
   color: #000000ff;                     /* light mode */
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 body.dark .information-paragraph {
@@ -78,6 +80,7 @@ body.dark .information-points li {
 
 .information-right img {
   max-width: 100%;
+  
   height: auto;
   border-radius: 16px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);

@@ -98,7 +98,7 @@ updateLogo();
     { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
   );
   revealItems.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 80}ms`;
+    el.style.transitionDelay = `${index * 10}ms`;
     observerReveal.observe(el);
   });
 

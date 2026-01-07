@@ -7,6 +7,12 @@
 html {
   scrollbar-width: none;
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  -ms-overflow-style: none;
 }
 
 /* ================= SCROLL REVEAL ================= */
