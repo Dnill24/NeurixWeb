@@ -163,7 +163,7 @@ updateLogo();
     const isDark = document.body.classList.contains("dark");
     ctx.clearRect(0, 0, w, h);
     if (isDark) {
-      ctx.fillStyle = "#053247ff";
+      ctx.fillStyle = "#023049";
       ctx.fillRect(0, 0, w, h);
     }
 

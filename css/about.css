@@ -1,71 +1,62 @@
+/* About section scroll offset fix */
+/* Anchor offset for fixed header */
+#about-anchor {
+  display: block;
+  position: relative;
+  top: -120px; /* header height + buffer */
+  visibility: hidden; /* hide it */
+}
+
 /* ================= ABOUT BUTTON ================= */
+.about-btn-container {
+  text-align: center;   /* this will center inline/inline-flex button inside */
+  margin-top: 36px; 
+  margin-bottom: 24px;    /* optional spacing from top cards */
+}
+
 .btn.about-btn {
-  padding: 14px 42px;
-  border-radius: 999px;
+  display: inline-flex;       /* keep inline-flex for text + emoji/icon */
+  align-items: center;        /* vertical centering */
+  justify-content: center;    /* horizontal centering inside button */
+  gap: 8px;                   /* spacing between text and icon */
+
+  padding: 18px 36px;
+  border-radius: 12px;
   font-weight: 600;
+  font-size: 1rem;
   letter-spacing: 0.3px;
 
-  background: linear-gradient(
-    135deg,
-    var(--grad-1),
-    var(--grad-2)
-  );
-
+  background-color: #00D1CC; /* teal */
   color: #0b0f1a;
-  box-shadow:
-    0 8px 22px rgba(0, 255, 136, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+
+  text-align: center;        /* ensures text is centered inside */
 }
 
-/* hover / focus */
-.btn.about-btn:hover,
-.btn.about-btn:focus-visible {
+/* Hover effect */
+.btn.about-btn:hover {
+  background-color: #00b3aa;   /* slightly darker teal */
   transform: translateY(-2px);
-  box-shadow:
-    0 12px 30px rgba(0, 255, 136, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-/* ================= DARK MODE ================= */
-body.dark .btn.about-btn {
-  background: linear-gradient(
-    135deg,
-    #00ff99,
-    #00cc66
-  );
-
-  color: #0b0f1a;
-  box-shadow:
-    0 8px 26px rgba(0, 255, 136, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-
-/* subtle active press */
+/* Active press */
 .btn.about-btn:active {
   transform: translateY(0);
-  box-shadow:
-    0 5px 14px rgba(0, 255, 136, 0.3);
 }
 
-@media (hover: hover) {
-  .btn.about-btn:hover {
-    filter: drop-shadow(0 0 14px rgba(0, 255, 136, 0.6));
-  }
+/* Dark mode */
+body.dark .btn.about-btn {
+  background-color: #00D1CC;
+  color: #0b0f1a;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .btn.about-btn {
-    transition: none;
-  }
-}
-
+/* Mobile adjustments */
 @media (max-width: 600px) {
   .btn.about-btn {
-    padding: 12px 34px;
+    padding: 10px 24px;
     font-size: 0.9rem;
   }
 }
@@ -73,7 +64,7 @@ body.dark .btn.about-btn {
 /* ================= ABOUT PRODUCT ================= */
 .about-product {
   width: 100%;
-  padding: 100px 0;
+  padding: 70px 0;
   background: transparent;
 }
 
@@ -83,85 +74,163 @@ body.dark .btn.about-btn {
   margin: auto;
 }
 
+/* ================= HEADER ================= */
 .about-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 80px;
+  margin: 0 auto 40px;
 }
 
 .about-title {
   color: var(--text); 
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  background: none; 
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
+  margin-bottom: 0;
 }
-
-.about-title .highlight {
-  background: linear-gradient(90deg, var(--grad-1), var(--grad-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 
 .about-intro {
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--muted);
+  margin-top: 16px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 60px;
-  align-items: center;
+/* ================= TOP CARDS ================= */
+.about-cards-top {
+  display: flex;
+  gap: 35px; /* smaller gap between cards */
+  flex-wrap: wrap;
+  justify-content: center; /* center the cards */
+  margin-bottom: 50px;
 }
 
-.about-text {
+.about-card-large {
+  background: #ffffff; /* opaque background for light mode */
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px;
+  height: 150px; /* card height */
+  width: 300px;
+
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  text-align: center;
+  color: #000;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(0,0,0,0.05);
+
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* Default: Light mode */
-.about-point h3 {
+body.dark .about-card-large {
+  background: transparent;
+  color: #b0bec7;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.1);
+}
+
+.about-card-large h3 {
   font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: black; /* solid black for light mode */
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
+  margin-bottom: 6px;
+  color: #000;
 }
 
-/* Dark mode */
-body.dark .about-point h3 {
-  color: white; /* solid white for dark mode */
+body.dark .about-card-large h3 {
+  color: #b0bec7;
 }
 
-
-.about-point p {
+.about-card-large p {
   font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--muted);
+  line-height: 1.5;
+  color: #333;
 }
 
-.about-media {
+body.dark .about-card-large p {
+  color: #b0bec7;
+}
+
+.about-card-large:hover {
+  transform: translateY(-4px);
+  border-color: #00a89f; /* slightly darker teal on hover */
+}
+
+/* ================= BOTTOM CARDS ================= */
+.about-cards-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 18px; /* smaller gap */
+  margin-top: 50px;
+}
+
+.about-card-small {
+  width: 82%;          /* full width of its grid cell */
+  height: 75px;
+  background: white;
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 30px;
+  text-align: center;
+  color: #000;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(0,0,0,0.05);
 }
 
-.about-media img {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 24px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+
+body.dark .about-card-small {
+  background: transparent;
+  color: #b0bec7;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.08);
 }
 
-.about-btn {
-  padding: 16px 44px;
-  font-size: 1rem;
+.about-card-small .stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #00D1CC;
+}
+
+
+.about-card-small .stat-label {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+body.dark .about-card-small .stat-label {
+  color: #b0bec7;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .about-cards-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-cards-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-cards-top,
+  .about-cards-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .about-intro {
+    font-size: 1rem;
+  }
+
+  .about-card-large {
+    height: auto;
+  }
+
+  .about-card-small {
+    height: auto;
+  }
 }

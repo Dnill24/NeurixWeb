@@ -4,7 +4,7 @@
   color: var(--text); /* black in light, white in dark */
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   background: none; /* remove gradient */
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
@@ -17,6 +17,20 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.cards-subtext {
+  font-size: 1.2rem;       /* slightly smaller than the title */
+  line-height: 1.45;        /* same as hero sub-headline */
+  color: #000;               /* black in light mode */
+  margin: 0 auto 60px auto;  /* centered horizontally + spacing below */
+  max-width: 600px;          /* constrain width for readability */
+  text-align: center;        /* center the text */
+}
+
+body.dark .cards-subtext {
+  color: #b0bec7;            /* light gray in dark mode */
+}
+
 
 @media (max-width: 600px) {
   .cards-title {

@@ -1,0 +1,90 @@
+/* ================= CONTACT SECTION ================= */
+.contact-section {
+  width: 100%;
+  padding: 100px 0;
+  background: #f9f9f9; /* light background */
+}
+
+body.dark .contact-section {
+  background: #023049; /* dark mode */
+}
+
+.contact-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.contact-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+body.dark .contact-title {
+  color: #ffffff;
+}
+
+.contact-subtext {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+body.dark .contact-subtext {
+  color: #b0bec7;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: #00D1CC;
+  color: #0b0f1a;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.contact-btn:hover {
+  background-color: #00b3aa;
+  transform: translateY(-2px);
+}
+
+.contact-btn i {
+  font-size: 1.2rem;
+}
+
+body.dark .contact-btn {
+  color: #0b0f1a;
+}
+
+@media (max-width: 768px) {
+  .contact-buttons {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-btn {
+    width: 80%;
+    justify-content: center;
+  }
+}

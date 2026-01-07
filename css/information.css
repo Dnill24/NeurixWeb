@@ -1,0 +1,120 @@
+/* ================= INFORMATION SECTION ================= */
+.information-section {
+  width: 100%;
+  padding: 95px 0 80px; /* top/bottom padding */
+  z-index: 1;
+}
+
+.information-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 64px;         /* space between text and image */
+  width: 90%;         /* match hero-inner width */
+  max-width: 1200px;  /* match hero max-width */
+  margin: 0 auto;
+  flex-wrap: nowrap;  /* prevent image from dropping under text */
+}
+
+.information-left {
+  flex: 0 0 54%;       /* slightly smaller to account for gap */
+}
+
+.information-right {
+  flex: 0 1 42%;       /* allow shrinking if needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.information-title {
+  font-size: clamp(1.8rem, 5vw, 3rem); /* responsive scaling */
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #000;                          /* light mode */
+}
+
+body.dark .information-title {
+  color: #ffffff;                       /* dark mode */
+}
+
+.information-paragraph {
+  font-size: 1.25rem;
+  line-height: 1.45;
+  color: #000000ff;                     /* light mode */
+  margin-bottom: 20px;
+}
+
+body.dark .information-paragraph {
+  color: #d0d0d0;                       /* dark mode */
+}
+
+.information-points {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.information-points li {
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  color: #000000ff;
+}
+
+body.dark .information-points li {
+  color: #d0d0d0;
+}
+
+.point-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.information-right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.information-right img:hover {
+  transform: translateY(-6px);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .information-container {
+    flex-direction: column;      /* stack text + image */
+    align-items: flex-start;
+    gap: 56px;                   /* spacing between text + image */
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .information-left,
+  .information-right {
+    flex: unset;
+    width: 100%;
+  }
+
+  .information-title {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+  }
+
+  .information-paragraph {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+
+  .information-points li {
+    font-size: 1rem;
+  }
+}

@@ -9,7 +9,7 @@
 :root {
   /* Brand colors */
   --brand-1: #00D1CC;
-  --brand-2: #053c52ff;
+  --brand-2: #023049;
   --brand-3: #032A46;
 
   /* UI colors */
@@ -76,8 +76,23 @@ section,
   background: transparent !important;
 }
 
+/* Make the page take full height and footer stick to bottom */
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensure body fills viewport */
+}
+
+main, .home, .hero, .cards-section, .information-section, .about-product, .contact-section {
+  flex: 1; /* allow content to expand and push footer down */
+}
+
+.site-footer {
+  flex-shrink: 0; /* footer never shrinks */
 }

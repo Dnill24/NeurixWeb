@@ -37,9 +37,13 @@
 .sub-headline {
   font-size: 1.25rem;                /* bigger */
   line-height: 1.45;                 /* tighter */
-  color: #9aa4ad;                    /* light gray */
+  color: #000000ff;                    /* light gray */
   max-width: 560px;
   margin-bottom: 40px;
+}
+
+body.dark .sub-headline {
+  color: #b0bec7;                   /* gray in dark mode */
 }
 
 .teal {
@@ -99,8 +103,12 @@
 
 .stat-label {
   font-size: 1.05rem;
-  color: #9aa4ad;
+  color: #000;                      /* black in light mode */
   letter-spacing: 0.4px;
+}
+
+body.dark .stat-label {
+  color: #b0bec7;                   /* gray in dark mode */
 }
 
 /* ================= RIGHT ================= */
@@ -168,7 +176,6 @@ body.dark .graph-card {
     line-height: 1.1;
   }
 
-  /* Sub-headline left-aligned, same size as before */
   .sub-headline {
     font-size: 1.25rem;
     max-width: 100%;
