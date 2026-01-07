@@ -45,6 +45,22 @@ updateLogo();
     navToggle.addEventListener("click", () => {
       nav.classList.toggle("open");
     });
+
+    // Close menu when clicking on nav links
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+      });
+    });
+
+    // Close menu when clicking on buttons inside nav
+    const navButtons = nav.querySelectorAll(".btn");
+    navButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        nav.classList.remove("open");
+      });
+    });
   }
 
   // ================= DESKTOP NAV HIDE/SHOW ON SCROLL =================
