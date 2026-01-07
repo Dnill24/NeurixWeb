@@ -96,3 +96,8 @@ main, .home, .hero, .cards-section, .information-section, .about-product, .conta
 .site-footer {
   flex-shrink: 0; /* footer never shrinks */
 }
+
+/* ================= DIVIDER BEBAS ================= */
+#bebas {
+  padding-bottom: 80px;
+}
