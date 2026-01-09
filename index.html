@@ -137,7 +137,7 @@
       <!-- Stats -->
       <div class="hero-stats">
         <div class="stat reveal">
-          <span class="stat-number">85.2%</span>
+          <span class="stat-number">60.44%</span>
           <span class="stat-label">Winrate</span>
         </div>
         <div class="stat reveal">
@@ -153,10 +153,53 @@
 
     <!-- RIGHT CONTENT -->
     <div class="hero-right reveal">
-      <div class="graph-card reveal">
-        <span class="graph-badge">+30%</span>
-        <img src="./img/Graph.svg" alt="Growth Graph">
-      </div>
+<div class="hero-graph">
+  <div class="graph-title">2025 Results</div>
+
+  <svg viewBox="0 0 500 260" class="graph-svg" preserveAspectRatio="none">
+    <defs>
+      <!-- Gradient under graph -->
+      <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#00D1CC" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#00D1CC" stop-opacity="0"/>
+      </linearGradient>
+
+      <!-- Shadow -->
+      <filter id="graphShadow" x="-10%" y="-10%" width="120%" height="140%">
+        <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#00D1CC" flood-opacity="0.25"/>
+      </filter>
+    </defs>
+
+    <!-- background grid -->
+    <path d="M0 200 L500 200" class="grid-line"/>
+    <path d="M0 140 L500 140" class="grid-line"/>
+    <path d="M0 80 L500 80" class="grid-line"/>
+
+    <!-- shaded area -->
+    <path
+      d="M0 230
+        C 120 200, 200 100, 280 120
+        S 420 30, 500 20
+        L 500 260
+        L 0 260
+        Z
+        "
+      fill="url(#areaGradient)"
+    />
+
+    <!-- main line -->
+    <path
+      d="M0 230
+          C 120 200, 200 100, 280 120
+          S 420 30, 500 20"
+      class="growth-line"
+      filter="url(#graphShadow)"
+    />
+  </svg>
+
+  <div class="graph-bubble">+913%</div>
+</div>
+
     </div>
   </div>
 </section>
