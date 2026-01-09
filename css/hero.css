@@ -230,7 +230,7 @@ body.dark .grid-line {
 .growth-line {
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;
-  animation: drawLine 4s ease forwards;
+  animation: drawLine 7s ease forwards;
 }
 
 @keyframes drawLine {
