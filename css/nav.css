@@ -210,7 +210,7 @@ body.dark .nav-toggle span {
     left: 0;
     width: 100%;
     height: auto;
-    max-height: calc(100vh - 70px);
+    max-height: calc(100vh - 80px);
     padding: 1.5rem 5vw 1.5rem 5vw;
     margin-right: 70px;
     background: var(--card-light);
@@ -279,13 +279,7 @@ body.dark .nav-toggle span {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .mobile-menu-actions .btn.cta-solid {
-    width: 90%;
-    text-align: center;
-    padding: 0.55em 1em;
-    font-size: 0.9rem;
-  }
-
+ 
   .mobile-menu-actions .theme-switch {
     display: flex;
     justify-content: center;

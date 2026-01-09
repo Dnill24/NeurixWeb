@@ -19,7 +19,7 @@
   align-items: center;        /* vertical centering */
   justify-content: center;    /* horizontal centering inside button */
   gap: 8px;                   /* spacing between text and icon */
-
+  text-decoration: none;
   padding: 18px 36px;
   border-radius: 12px;
   font-weight: 600;
@@ -233,5 +233,5 @@ body.dark .about-card-small .stat-label {
 }
 
 #about {
-  scroll-margin-top: 50px; /* space ABOVE the section */
+  scroll-margin-top: 40px; /* space ABOVE the section */
 }
