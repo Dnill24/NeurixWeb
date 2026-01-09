@@ -2,9 +2,9 @@
 
 .hero {
   width: 100%;
-  min-height: 100vh;       /* make full viewport height */
-  padding: 95px 0 80px;    /* top padding = header height */
-  z-index: 1;
+  min-height: calc(100vh - 95px);
+  padding-top: 95px;
+  padding-bottom: 40px;
 }
 
 .hero-inner {
@@ -15,7 +15,7 @@
   max-width: 1200px;
   margin: 0 auto;
   gap: 64px;
-  min-height: 80vh;
+  min-height: auto;
 }
 
 .hero h1:first-child {
@@ -154,6 +154,7 @@ body.dark .graph-card {
 
 @media (max-width: 900px) {
   /* Hero layout */
+
   .hero-inner {
     flex-direction: column;
     align-items: flex-start; /* left-aligned */

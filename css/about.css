@@ -235,3 +235,9 @@ body.dark .about-card-small .stat-label {
     height: auto;
   }
 }
+
+@media (max-width: 768px) {
+  .about-cards-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
