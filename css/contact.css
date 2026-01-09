@@ -104,3 +104,7 @@ body.dark .contact-btn {
     box-sizing: border-box;
   }
 }
+
+#contact {
+  scroll-margin-top: 60px; /* space ABOVE the section */
+}

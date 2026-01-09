@@ -15,7 +15,6 @@
   transition: transform 0.2s ease, opacity 0.2s ease;
   will-change: transform, opacity;
   pointer-events: auto;
-  overflow: hidden;
 }
 
 /* ================= LINKS ================= */
@@ -55,9 +54,11 @@ body.dark .site-header {
 
 /* ================= LEFT ================= */
 .header-left {
+  height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 2vw;
+  padding-left: 30px;
+  overflow: hidden;
 }
 
 #logo img {
@@ -306,4 +307,9 @@ body.dark .nav-toggle span {
   /* Hide duplicate desktop/mobile classes */
   .desktop-only { display: none; }
   .mobile-only { display: flex; }
+
+  .header-left {
+  padding-left: 20px;
+  }
+  
 }

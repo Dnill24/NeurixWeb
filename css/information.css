@@ -304,6 +304,9 @@ body.dark .about-visual {
   }
 }
 
+#information {
+  scroll-margin-top: 30px; /* space ABOVE the section */
+}
 
 
 

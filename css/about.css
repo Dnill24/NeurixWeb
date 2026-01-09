@@ -143,7 +143,7 @@ body.dark .about-card-large h3 {
 }
 
 .about-card-large p {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   line-height: 1.5;
   color: #333;
 }
@@ -160,7 +160,7 @@ body.dark .about-card-large p {
 /* ================= BOTTOM CARDS ================= */
 .about-cards-bottom {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  grid-template-columns: repeat(3, 1fr); /* 4 equal columns */
   gap: 18px; /* smaller gap */
   margin-top: 50px;
   justify-items: center;
@@ -190,7 +190,7 @@ body.dark .about-card-small {
 }
 
 .about-card-small .stat-number {
-  font-size: 2.5rem;
+  font-size: 1.5 rem;
   font-weight: 700;
   margin-bottom: 6px;
   color: #00D1CC;
@@ -209,10 +209,6 @@ body.dark .about-card-small .stat-label {
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .about-cards-top {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-cards-bottom {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -236,8 +232,6 @@ body.dark .about-card-small .stat-label {
   }
 }
 
-@media (max-width: 768px) {
-  .about-cards-bottom {
-    grid-template-columns: repeat(2, 1fr);
-  }
+#about {
+  scroll-margin-top: 50px; /* space ABOVE the section */
 }
