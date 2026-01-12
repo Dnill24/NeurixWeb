@@ -39,10 +39,14 @@ body.dark .cards-subtext {
   overflow: hidden;
 }
 
+#features {
+  scroll-margin-top: 120px;
+}
+
 
 @media (max-width: 768px) {
   .cards-section {
-    padding-top: 100px;
+    padding-top: calc(95px + 4rem);
   }
   
   .cards-title {
@@ -51,6 +55,3 @@ body.dark .cards-subtext {
   }
 }
 
-#features {
-  scroll-margin-top: 80px; /* space ABOVE the section */
-}
