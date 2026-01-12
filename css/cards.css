@@ -132,6 +132,7 @@ body.dark .info-card img {
   line-height: 1.6;   /* 1.4 → 20% smaller */
   color: var(--muted);
   overflow-wrap: break-word;
+  text-align: justify;
 }
 
 body.dark .info-card h3 {
@@ -190,5 +191,9 @@ body.dark .info-card p {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+  }
+
+  .info-card p {
+    text-align: justify;
   }
 }

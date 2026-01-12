@@ -41,6 +41,7 @@
   color: #000000ff;                    /* light gray */
   max-width: 560px;
   margin-bottom: 40px;
+  text-align: justify;
 }
 
 body.dark .sub-headline {
@@ -273,6 +274,8 @@ body.dark .grid-line {
     max-width: 100%;
     margin: 0 0 40px 0;
     line-height: 1.45;
+    padding-bottom: 20px;
+    text-align: justify;
   }
 
   /* Stack buttons vertically, same width/shape */
@@ -328,12 +331,15 @@ body.dark .grid-line {
 
    .hero-right {
     padding-top: 60px;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .hero-graph {
-  width: 380px;
-  height: 180px;
-  padding: 30px;
-  padding-top: 30px;
-
+    width: min(90vw, 310px);
+    height: 180px;        /* explicit height = no runaway tall graph */
+    padding: 16px;
+  }
 }
